@@ -1,0 +1,41 @@
+.episodios-box .column {
+    float: left;
+    width: 23%;
+    padding: 10px 10px;
+    text-align: center;
+}
+
+.episodios-box .row {
+    margin: 0 -5px;
+    overflow: scroll;
+    max-height: 750px;
+}
+
+.episodios-box .row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+@media screen and (max-width: 600px) {
+    .column {
+      width: 40%;
+      display: block;
+      margin-bottom: 20px;
+    }
+}
+
+.episodios-box .card {
+    position: relative;
+    padding: 25px;
+    box-shadow: 0 0px 16px lightgreen;
+    text-align: center;
+    background-color: black;
+    border-radius: 25px;
+    height: 200px;
+    width: 70%;
+}
+
+.episodios-box .episodio-info a {
+    color: green;
+}

@@ -1,0 +1,42 @@
+@font-face {
+    src: url(../font/get_schwifty.ttf);
+    font-family: ram;
+}
+
+h1 {
+    text-shadow: 2px 0 0 #fff,-2px 0 0 #fff, 0 2px 0 #fff, 0 -2px 0 #fff, 1px 1px #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff;
+    color: green;
+    font-family: ram;
+    text-align: center;
+    font-size: 40px;
+}
+
+h2 {
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+}
+
+h4 {
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+}
+
+h5 {
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+}
+
+.main-menu {
+    font-size: 30px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+}
+
+.welcome-text {
+    color: white;
+    font-family: ram;
+    font-size: 150px;
+}

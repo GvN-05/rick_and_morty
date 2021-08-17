@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rick And Morty</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/font.css">
+    <link rel="stylesheet" href="css/episodio.css">
+    <link rel="stylesheet" href="css/personaje.css">
+
+    <!-- ICONS -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+</head>
+
+<body>
+    <div id="main-contenedor" class="main-cont">
+        <!-- #region HEADER -->
+        <h1>Rick and Morty</h1>
+        <h5>Non-official page</h5>
+        <!-- #endregion -->
+
+        <div class="welcome-cont" @click="activarMenu()" v-if="bienvenido === true">
+            <img class="welcome-img" src="images/welcome.jpg" v-if="menu === false" alt="" />
+            <div class="welcome-overlay">
+                <div class="welcome-text">INGRESA</div>
+            </div>
+        </div>
+
+        <!-- #region TABS -->
+        <input type="radio" name="slider" v-on:change="activarVentanaEpisodio" checked id="episodios">
+        <input type="radio" name="slider" v-on:change="activarVentanaPersonaje" id="personajes">
+        <nav class="main-menu" v-if="menu === true">
+            <label for="episodios" class="episodios">
+                <i class="material-icons">video_library</i>
+                EPISODIOS
+            </label>
+            <label for="personajes" class="personajes">
+                <i class="material-icons">contacts</i>
+                PERSONAJES
+            </label>
+            <div class="slider"></div>
+        </nav>
+        <!-- #endregion -->
+
+        <!-- #region BUSCADOR -->
+        <div class="buscador-cont" v-if="bienvenido === false">
+            <input type="text" v-if="tabEp === true" v-model="busqueda_txt" placeholder="Buscar episodio">
+            <input type="text" v-if="tabPe === true" v-model="busqueda_txt" placeholder="Buscar personaje">
+        </div>
+        <!-- #endregion -->
+
+        <!-- #region EPISODIOS CONTENT -->
+        <div v-if="tabEp === true" class="episodios-content">
+            <div class="episodios-box">
+                <div class="row">
+                    <div class="column" v-for="episodio in busqueda_result" :key="name">
+                        <div class="card">
+                            <div class="episodio-name">
+                                <h2>{{ episodio.name }}</h2>
+                            </div>
+                            <div class="episodio-info">
+                                <h4>{{ episodio.air_date }}</h4>
+                                <a href="#" @click="characterListLoad(episodio.episode)">Cast</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- #endregion -->
+
+        <!-- #region PERSONAJES CONTENT -->
+        <div v-if="tabPe === true" class="personajes-content">
+            <div class="personajes-box">
+                <div class="row">
+                    <div class="column" v-for="personaje in busqueda_result" :key="name">
+                        <div class="card">
+                            <img :src="personaje.image" class="personaje-image" />
+                            <div class="personaje-name">
+                                <h2>{{ personaje.name }}</h2>
+                            </div>
+                            <div class="personaje-status">
+                                <h4>{{ personaje.status }}</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- #endregion -->
+    </div>
+
+    <!-- UTIL IMPORT -->
+    <script type="text/javascript" src="util/vue.js"></script>
+    <script type="text/javascript" src="util/axios.min.js"></script>
+
+    <!-- VUE IMPORT -->
+    <script rel="text/javascript" src="instances/main.js"></script>
+</body>
+
+</html>

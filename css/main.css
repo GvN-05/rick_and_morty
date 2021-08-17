@@ -1,0 +1,119 @@
+html,
+body {
+    height: 100%;
+}
+
+body {
+    background: black;
+    overflow: hidden;
+    margin: 0;
+	width: 100%;
+}
+
+.welcome-cont {
+    position: relative;
+    overflow: hidden;
+}
+
+.welcome-img {
+    transition: all .5s;
+    height: 500px;
+}
+
+.welcome-overlay {
+    position: absolute;
+    bottom: 0;
+    padding: 10px;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    color: black;
+    transform: translateY(100%);
+    transition: all .5s ease-out ;
+}
+
+.welcome-cont:hover .welcome-overlay {
+    transform: translateY(0);
+}
+
+.welcome-cont:hover .welcome-img {
+    transform: scale(1.15);
+}
+
+.main-cont {
+    max-width: 90%;
+    margin: auto;
+    text-align: center;
+    padding: 25px 30px 30px 30px;
+    max-height: 90%;
+    width: 100%;
+    height: 100%;
+}
+
+.main-cont nav {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.main-cont nav label {
+    display: block;
+    height: 100%;
+    width: 100%;
+    line-height: 50px;
+    cursor: pointer;
+    color: green;
+    position: relative;
+    z-index: 1;
+    transition: all 0.3s ease;
+}
+
+#episodios:checked ~ nav label.episodios,
+#personajes:checked ~ nav label.personajes {
+    color: black;
+}
+
+input[type="radio"] {
+    display: none;
+}
+
+.main-cont nav .slider {
+    position: absolute;
+    height: 100%;
+    width: 50%;
+    background: green;
+    border-radius: 5px;
+    z-index: 0;
+    left: 0;
+    bottom: 0;
+    transition: all 0.3s ease;
+}
+
+#episodios:checked ~ nav .slider{
+    left: 0%;
+}
+
+#personajes:checked ~ nav .slider{
+    left: 50%;
+}
+
+.buscador-cont {
+    padding: 5px 0;
+    width: 100%;
+    margin: 0;
+}
+
+input[type="text"] {
+    background-color: black;
+    color: white;
+    border: none;
+    border-bottom: 3px solid green;
+    width: 100%;
+    height: 40px;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.episodios-content,
+.personajes-content {
+    height: 100%;
+}

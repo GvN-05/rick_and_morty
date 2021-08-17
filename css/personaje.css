@@ -1,0 +1,46 @@
+.personajes-box .column {
+    float: left;
+    width: 23%;
+    padding: 10px 10px;
+    text-align: center;
+}
+
+.personajes-box .row {
+    margin: 0 -5px;
+    overflow: scroll;
+    max-height: 750px;
+}
+
+.personajes-box .row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+@media screen and (max-width: 600px) {
+    .column {
+      width: 40%;
+      display: block;
+      margin-bottom: 20px;
+    }
+}
+  
+.personajes-box .card {
+    position: relative;
+    padding: 25px;
+    box-shadow: 0 0px 16px lightgreen;
+    text-align: center;
+    background-color: black;
+    border-radius: 25px;
+    height: 210px;
+    width: 70%;
+}
+
+.personajes-box .personaje-image,
+.personajes-box .personaje-name h2,
+.personajes-box .personaje-status h4 {
+    margin: auto;
+    text-align: center;
+    width: 50%;
+    font-size: 100%;
+}
